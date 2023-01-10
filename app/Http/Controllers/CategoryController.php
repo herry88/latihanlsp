@@ -42,7 +42,12 @@ class CategoryController extends Controller
     {
         $input = $request->all();
         $category= Category::create($input);
-        dd('category');
+        // dd($category);
+        if ($category->save()) {
+            return redirect()->route('category.index');
+        } else{
+            return redirect()->back();
+        }
     }
 
     /**

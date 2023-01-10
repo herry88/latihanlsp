@@ -18,20 +18,24 @@
                                     <th>Tools</th>
                                 </thead>
                             </tr>
-                            <tr>
-                                <tbody>
+
+                            <tbody>
+
+                                @forelse ($category as $ct)
                                     <tr>
-                                        @forelse ($category as $ct)
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $ct->namacategory }}</td>
-                                            <td>{{ $ct->deskripsi }}</td>
-                                            <td>&nbsp;</td>
-                                        @empty
-                                            <td colspan="4" class="text-center">Belum Ada Data</td>
-                                        @endforelse
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $ct->namacategory }}</td>
+                                        <td>{{ $ct->deskripsi }}</td>
+                                        <td>&nbsp;</td>
                                     </tr>
-                                </tbody>
-                            </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="4" class="text-center">Belum Ada Data</td>
+                                    </tr>
+                                @endforelse
+
+                            </tbody>
+
                         </table>
                     </div>
                 </div>
