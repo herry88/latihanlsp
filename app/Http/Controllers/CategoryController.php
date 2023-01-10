@@ -14,8 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        //eloquent -> SQL di laravel
+        //select * from namatable
+        $category = Category::all();
         //passing ke file index
-        return view('category.index');
+        return view('category.index', compact('category'));
     }
 
     /**
