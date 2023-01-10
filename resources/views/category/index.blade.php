@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        Category
+                        <a href="{{ route('category.create') }}" class="btn btn-primary">Add</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
