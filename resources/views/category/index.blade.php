@@ -26,7 +26,10 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $ct->namacategory }}</td>
                                         <td>{{ $ct->deskripsi }}</td>
-                                        <td>&nbsp;</td>
+                                        <td><a href="{{ route('category.edit', $ct->id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ route('category.destroy', $ct->id) }}"
+                                                class="btn btn-danger">Hapus</a>
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>
