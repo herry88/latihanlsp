@@ -7,16 +7,18 @@
                 <div class="card">
                     <div class="card-header">Edit Kategori</div>
                     <div class="card-body">
-                        <form action="#" method="post">
+                        <form action="{{ route('category.update', $category->id) }}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="">Nama Kategori</label>
-                                <input type="text" name="namacategory" class="form-control">
+                                <input type="text" value="{{ $category->namacategory }}" name="namacategory"
+                                    class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Deskripsi</label>
-                                <input type="text" name="deskripsi" class="form-control">
+                                <input type="text" name="deskripsi" value="{{ $category->deskripsi }}"
+                                    class="form-control">
                             </div>
                     </div>
                     <div class="card-footer">
