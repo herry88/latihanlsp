@@ -14,8 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        //eloquent -> SQL di laravel
+        //select * from namatable
+        $category = Category::all();
         //passing ke file index
-        return view('category.index');
+        return view('category.index', compact('category'));
     }
 
     /**
@@ -26,6 +29,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('category.create');
     }
 
     /**
@@ -36,7 +40,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $category= Category::create($input);
+        // dd($category);
+        if ($category->save()) {
+            return redirect()->route('category.index');
+        } else{
+            return redirect()->back();
+        }
     }
 
     /**
