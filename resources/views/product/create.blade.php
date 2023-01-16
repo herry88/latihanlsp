@@ -34,6 +34,9 @@
                                 <label for="">Qty</label>
                                 <input type="text" name="qty" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                            </div>
                         </form>
                     </div>
                 </div>
