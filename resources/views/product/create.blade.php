@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Tambah Data</div>
                     <div class="card-body">
-                        <form action="#" method="post">
+                        <form action="{{ route('product.store') }}" method="post">
                             @csrf
                             @method('POST')
                             <div class="form-group">
@@ -18,7 +18,7 @@
                                 <label for="">Nama Kategori</label>
                                 <select name="category_id" id="category_id" class="form-control">
                                     @foreach ($category as $c)
-                                        <option value="{{ $c->id }}">{{ $c->namacategory}}</option>
+                                        <option value="{{ $c->id }}">{{ $c->namacategory }}</option>
                                     @endforeach
                                 </select>
                             </div>
