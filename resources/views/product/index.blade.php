@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header"><a href="" class="btn btn-primary">Add</a></div>
+                    <div class="card-header"><a href="{{ route('product.create') }}" class="btn btn-primary">Add</a></div>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
