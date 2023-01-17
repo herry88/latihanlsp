@@ -22,7 +22,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $pr->namaproduct }}</td>
-                                        <td>{{ $pr->category_id }}</td>
+                                        <td>{{ $pr->namacategories->namacategory }}</td>
                                         <td>{{ $pr->qty }}</td>
                                         <td>&nbsp;</td>
                                     </tr>
