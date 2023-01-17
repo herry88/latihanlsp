@@ -17,6 +17,17 @@
                                     <th>Tools</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @foreach ($product as $pr)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $pr->namaproduct }}</td>
+                                        <td>{{ $pr->category_id }}</td>
+                                        <td>{{ $pr->qty }}</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
