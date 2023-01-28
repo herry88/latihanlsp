@@ -24,5 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //rute category
 Route::resource('category', App\Http\Controllers\CategoryController::class);
 
+
 //product
 Route::resource('product', App\Http\Controllers\ProductController::class);
+
+//untuk delete category
+Route::get('category/destroy/{id}',[App\Http\Controllers\CategoryController::class, 'destroy'])->name('category.destroy');
+

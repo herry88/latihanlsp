@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        Category
+                        <a href="{{ route('category.create') }}" class="btn btn-primary">Add</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
@@ -18,11 +18,27 @@
                                     <th>Tools</th>
                                 </thead>
                             </tr>
-                            <tr>
-                                <tbody>
-                                    <td></td>
-                                </tbody>
-                            </tr>
+
+                            <tbody>
+
+                                @forelse ($category as $ct)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $ct->namacategory }}</td>
+                                        <td>{{ $ct->deskripsi }}</td>
+                                        <td><a href="{{ route('category.edit', $ct->id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ route('category.destroy', $ct->id) }}"
+                                                class="btn btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="4" class="text-center">Belum Ada Data</td>
+                                    </tr>
+                                @endforelse
+
+                            </tbody>
+
                         </table>
                     </div>
                 </div>
