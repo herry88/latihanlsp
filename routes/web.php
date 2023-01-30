@@ -19,15 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//rute untuk admin
+Route::group(['middleware'=>['auth','admin']], function(){
 //rute category
 Route::resource('category', App\Http\Controllers\CategoryController::class);
-
-
 //product
 Route::resource('product', App\Http\Controllers\ProductController::class);
+});
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //untuk delete category
 Route::get('category/destroy/{id}',[App\Http\Controllers\CategoryController::class, 'destroy'])->name('category.destroy');
-

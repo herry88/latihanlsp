@@ -24,7 +24,9 @@
                                         <td>{{ $pr->namaproduct }}</td>
                                         <td>{{ $pr->namacategories->namacategory }}</td>
                                         <td>{{ $pr->qty }}</td>
-                                        <td>&nbsp;</td>
+                                        <td>
+                                            <a href="{{ route('product.edit', $pr->id) }}" class="btn btn-warning">Ubah</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
